@@ -1,3 +1,58 @@
-.firstSectionBackground{
-    background-color: #f1f1f1;
+.firstSectionBackground {
+  background-color: #f1f1f1;
+}
+
+.navbarHeaderoption {
+  display: flex;
+  justify-content: end;
+}
+
+@media (min-width: 450) {
+  .navbarHeaderoption {
+    display: block !important;
+    /* justify-content: end; */
+  }
+}
+
+@media (max-width: 575) {
+  .productimg {
+    max-width: 100%;
+    max-height: 45vh;
+    width: initial;
+  }
+  .card__img {
+    width: initial;
+  }
+}
+
+@media (max-width: 700px) {
+  /* CSS rules for small devices */
+  body {
+    font-size: 14px;
+  }
+  .shopnowimage {
+    display: none;
+  }
+  /* Adjust other styles as needed */
+}
+
+/* For medium devices like tablets */
+@media (max-width: 770px) and (max-width: 991px) {
+  /* CSS rules for medium devices */
+  body {
+    font-size: 14px;
+  }
+  .searchicon {
+    display: none;
+  }
+  /* Adjust other styles as needed */
+}
+
+/* For large devices like laptops and desktops */
+@media (min-width: 992px) {
+  /* CSS rules for large devices */
+  body {
+    font-size: 18px;
+  }
+  /* Adjust other styles as needed */
 }

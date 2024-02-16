@@ -5,7 +5,7 @@ import "./Cart.css";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import { Button } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useLocation ,useNavigate} from "react-router-dom";
 import "./DisplayProduct.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -13,9 +13,10 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { useData } from "../Data/DataFile";
 
 function DisplayProduct() {
+  const navigate = useNavigate();
   const location = useLocation();
-  const { Data ,AddData} = useData();
-const ProductAdd=location.state.value
+  const { Cart, AddCart , setPendingCart} = useData();
+  const ProductAdd = location.state.value;
 
   const [cartList, setcartList] = useState(location.state.value);
   const [liked, setLiked] = useState(false);
@@ -23,8 +24,17 @@ const ProductAdd=location.state.value
   const [selectedimage, setselectedimage] = useState(
     location.state.value.thumbnail
   );
-  // const NumberOfProduct = 1
-  console.log(Data);
+  console.log(Cart);
+
+  const handleAddTocart = () => {
+    if (localStorage.getItem("token")) {
+      AddCart([...Cart, ProductAdd]);
+    }else{
+      navigate("/login")
+      setPendingCart(ProductAdd)
+      window.scroll(0,0)
+    }
+  };
 
   return (
     <div>
@@ -128,7 +138,7 @@ const ProductAdd=location.state.value
                         className=""
                         variant="contained"
                         onClick={() => {
-                          AddData([...Data,ProductAdd])
+                          handleAddTocart();
                         }}
                         startIcon={<ShoppingCartOutlinedIcon />}
                       >

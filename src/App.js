@@ -8,6 +8,7 @@ import Register from "./pages/Auth/Register/Register";
 import Cart from "./pages/Cart";
 import DisplayProduct from "./pages/DisplayProduct";
 import { DataFile } from "./Data/DataFile";
+import AllProduct from "./pages/AllProduct";
 // import About from './components/About';
 // import Contact from './components/Contact';
 // import NotFound from './components/NotFound';
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="/login" exact element={<LoginPage />} />
               <Route path="/register" exact element={<Register />} />
               <Route path="/cart" exact element={<Cart />} />
+              <Route path="/allproducts" exact element={<AllProduct />} />
               <Route
                 path="/productdetails"
                 exact

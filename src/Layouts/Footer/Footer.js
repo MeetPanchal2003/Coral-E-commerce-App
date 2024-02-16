@@ -18,7 +18,7 @@ function Footer() {
       <div className="">
         <div className="container">
           <div className="row MainSection">
-            <div className="col">
+            <div className="col col-lg-3 col-md-3 col-sm-3 col-6">
               <div className="pb-3">
                 <img src={Logo} alt="corol-logo" />
               </div>
@@ -45,7 +45,7 @@ function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="col d-flex justify-content-center">
+            <div className="col col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
               <div>
                 <div className="pointer bolder mb-3">CATALOG</div>
                 <div className="pointer my-1">Necklaces</div>
@@ -55,7 +55,7 @@ function Footer() {
                 <div className="pointer my-1">jacket</div>
               </div>
             </div>
-            <div className="col d-flex justify-content-center">
+            <div className="col col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
               <div>
                 <div className="pointer bolder mb-3">ABOUT US</div>
                 <div className="pointer my-1">Our Producers</div>
@@ -65,7 +65,7 @@ function Footer() {
                 <div className="pointer my-1">Terms & Conditions</div>
               </div>
             </div>
-            <div className="col d-flex justify-content-center">
+            <div className="col col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center">
               <div>
                 <div className="pointer bolder mb-3">CUSTOMER SERVICES</div>
                 <div className="pointer my-1">Contact Us</div>

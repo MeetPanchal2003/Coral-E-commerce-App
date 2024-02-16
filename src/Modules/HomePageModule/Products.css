@@ -71,7 +71,7 @@ a {
 
 .card__name {
   position: absolute;
-  bottom: 15%;
+  bottom: -10%;
   width: 100%;
   text-align: center;
   background-color: black;

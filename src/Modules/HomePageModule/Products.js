@@ -2,126 +2,28 @@ import React, { useEffect, useState } from "react";
 import ProductList from "../../components/ProductList/ProductList";
 import Button from "@mui/material/Button";
 import "./Products.css";
+import { useData } from "../../Data/DataFile";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
-function Products() {
-  // const products = [
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   {
-  //     imgSrc: "https://i.postimg.cc/8PkwdTYd/image.png",
-  //     productName: "Autochthonous black cherries of the country",
-  //     description:
-  //       "The cherry is of a small caliber and a dark crimson color...",
-  //     originalPrice: "€1.50/kg",
-  //     discountedPrice: "https://ruben.soy/subgrid/cherries.webp",
-  //   },
-  //   // Add other product objects here
-  // ];
 
-  const [products, setProducts] = useState([]);
-  const [Displayproducts, setDisplayproducts] = useState([]);
+function Products() {
+  const { products, Allcategory } = useData();
+
+  // const [products, setProducts] = useState([]);
+  const [Displayproducts, setDisplayproducts] = useState(products);
   const [ProductsCategory, setProductsCategory] = useState([]);
   const [SelectCategory, setSelectCategory] = useState("");
-  const getAllProducts = () => {
-    fetch("https://dummyjson.com/products?limit=200")
-      .then((res) => res.json())
-      .then((json) => {
-        // debugger
-        console.log(json.products);
-        const categories = [
-          "mens-shirts",
-          "tops",
-          "womens-dresses",
-          "womens-shoes",
-          "mens-shoes",
-          "mens-watches",
-          "womens-watches",
-          "womens-bags",
-          "womens-jewellery",
-          "sunglasses",
-        ];
-        const Grosary = json.products.filter((item) =>
-          categories.includes(item.category)
-        );
-        setProducts(Grosary);
-        setDisplayproducts(Grosary);
-      });
-  };
 
   const getAllCategory = () => {
-    fetch("https://dummyjson.com/products/categories")
-      .then((res) => res.json())
-      .then((json) => {
         const categories = [
           "mens-shirts",
           "tops",
           "womens-dresses",
-          // "womens-shoes",
-          // "mens-shoes",
-          // "mens-watches",
-          // "womens-watches",
-          "womens-bags",
-          // "womens-jewellery",
-          // "sunglasses"
+          "womens-bags"
         ];
 
-        const Grosary = json.filter((item) => categories.includes(item));
+        const Grosary = Allcategory?.filter((item) => categories.includes(item));
         setProductsCategory(Grosary);
-      });
+      
   };
 
   const SelectedCategory = (select) => {
@@ -130,23 +32,17 @@ function Products() {
     setSelectCategory(select);
   };
 
-  // const getAllProducts=()=>{
-  //   fetch('https://dummyjson.com/products')
-  //           .then(res=>res.json())
-  //           .then(json=>setProducts(json.products))
-  // }
-
   useEffect(() => {
-    getAllProducts();
     getAllCategory();
-  }, []);
+    setDisplayproducts(products)
+  }, [Allcategory,products]);
 
   return (
     <div className="MainSection">
       <div className="container text-center">
         <h1>New Product</h1>
         <div className="row d-flex justify-content-between py-3">
-          <div className="d-flex col align-items-center">
+          <div className="d-flex col align-items-center align-items-center CategoryList">
             <div
               className={`me-3 pointer text-capitalize ${
                 SelectCategory === "" ? "bolder selectedNav" : ""
@@ -175,7 +71,7 @@ function Products() {
             {/* <div className="me-3 pointer">Hoodies</div>
             <div className="me-3 pointer">Jacket</div> */}
           </div>
-          <div className="col text-end">
+          <div className="col col-4 align-items-center text-end">
             <Button
               className="PurpuleButton"
               startIcon={<FilterAltOutlinedIcon />}
@@ -187,13 +83,14 @@ function Products() {
         </div>
         <div className="row">
           {Displayproducts.slice(0, 8).map((product, index) => (
-            <div className="col products col-lg-3">
+            <div className="col products col-lg-3 col-md-4 col-sm-6 col-12">
               <ProductList
                 imgSrc={product.thumbnail}
                 productName={product.title}
                 originalPrice={product.price}
                 productsdetails={product}
                 discountedPercentaze={product.discountPercentage}
+                productBrand={product.brand}
               />
             </div>
           ))}
