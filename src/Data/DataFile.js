@@ -6,6 +6,7 @@ export const DataFile = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [Allcategory, setAllCategory] = useState([]);
   const [Cart, setCart] = useState([]);
+  const [likeproduct, setlikeproduct] = useState([]);
   const [PendingCart, setPendingCart] = useState();
 
   const getAllProducts = () => {
@@ -63,7 +64,7 @@ export const DataFile = ({ children }) => {
   };
 
   return (
-    <DataContext.Provider value={{products, setProducts,Allcategory, setAllCategory, Cart, AddCart ,PendingCart, setPendingCart}}>
+    <DataContext.Provider value={{products, setProducts,Allcategory, setAllCategory, Cart, AddCart ,PendingCart, setPendingCart,likeproduct, setlikeproduct}}>
       {children}
     </DataContext.Provider>
   );

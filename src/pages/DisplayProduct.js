@@ -15,7 +15,7 @@ import { useData } from "../Data/DataFile";
 function DisplayProduct() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { Cart, AddCart , setPendingCart} = useData();
+  const { Cart, AddCart , setPendingCart,likeproduct, setlikeproduct} = useData();
   const ProductAdd = location.state.value;
 
   const [cartList, setcartList] = useState(location.state.value);
@@ -119,18 +119,23 @@ function DisplayProduct() {
                       </small>
                     </div>
                     <div className="col col-lg-12 col-6 pb-3">
-                      {liked ? (
+                      {likeproduct.includes(cartList.id) ? (
                         <FavoriteOutlinedIcon
                           className="me-3 text-danger"
                           onClick={() => {
-                            setLiked(false);
+                            const removeId =[cartList.id]
+                            const RemoveLike = likeproduct.filter(
+                              (item) => !removeId.includes(item)
+                            );
+          
+                            setlikeproduct(RemoveLike);
                           }}
                         />
                       ) : (
                         <FavoriteBorderOutlinedIcon
-                          className="me-3 text-danger"
+                          className="me-3 "
                           onClick={() => {
-                            setLiked(true);
+                            setlikeproduct([...likeproduct, cartList.id]);
                           }}
                         />
                       )}

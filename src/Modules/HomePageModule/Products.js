@@ -85,6 +85,7 @@ function Products() {
           {Displayproducts.slice(0, 8).map((product, index) => (
             <div className="col products col-lg-3 col-md-4 col-sm-6 col-12">
               <ProductList
+              PID={product.id}
                 imgSrc={product.thumbnail}
                 productName={product.title}
                 originalPrice={product.price}
