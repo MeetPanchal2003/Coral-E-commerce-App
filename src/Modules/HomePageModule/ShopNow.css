@@ -1,0 +1,32 @@
+
+
+.firstSection {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.secondSection {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.girlImg {
+  border-radius: 160px 0px 160px 0px;
+  box-shadow: var(--shadow);
+  --shadow: #F1F1F1 25px 20px 0px -3px, #AFAFAF 25px 20px;
+}
+
+.Firstsectionheader {
+  font-size: 50px;
+}
+.Firstsectioncontent {
+  font-size: 25px;
+}
+
+.flowerImage{
+    position: absolute;
+    padding-top: 180px;
+    overflow: hidden;
+    width: -webkit-fill-available;
+}

@@ -1,0 +1,32 @@
+.seeCollection {
+  min-height: 84vh;
+  background-image: url("../../assets/Images/see-collection-bg.png");
+  background-size: cover;
+}
+.zaraBackground {
+  position: absolute;
+  right: 0%;
+  padding-top: 20px;
+}
+
+.collectionBlock {
+  align-items: center;
+  display: flex;
+  height: 84vh;
+}
+
+.collection-logo{
+    width: 20%;
+}
+
+.collection-Content{
+    font-size: 17px;
+    width: 55vh;
+}
+
+.collection_btn{
+  border-radius: 3px !important;
+  padding: 3px 35px !important;
+  text-shadow: 0 0 black;
+  font-size: 17px !important;
+}

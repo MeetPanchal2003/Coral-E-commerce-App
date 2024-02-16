@@ -1,0 +1,49 @@
+.LoginBox{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    background: white;
+    /* margin: 50px 0px;  */
+}
+
+.loginpageForm{
+    display: flex;
+    align-items: center;
+    padding: 50px 50px;
+    background: linear-gradient(to right, white, hsl(0, 0%, 95%));
+}
+
+.loginBtn{
+    background: rgb(249,163,28);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 35px !important;
+    margin: 15px;
+    border: none;
+    /* box-shadow: 2px 3px 5px black; */
+    border-radius: 3px;
+}
+
+.loginBtn:hover{
+    background: rgb(249,163,28);
+    font-weight: 600;
+    box-shadow: 2px 3px 5px black;
+    /* box-shadow: 4px 6px 10px black; */
+    border: none;
+    border-radius: 3px;
+}
+
+.signupText{
+    margin-top: 30px !important;
+    font-weight: 500;
+}
+
+.borderRight{
+    border-right: 1px solid lightgray;
+}
+
+.error-msg{
+    font-size: 12px !important;
+    color: red;
+    font-weight: 500;
+    padding-top: 3px;
+}

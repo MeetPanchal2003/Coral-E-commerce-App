@@ -1,0 +1,10 @@
+.navbar {
+  border-bottom: 1px solid lightgray;
+}
+.navIconSize {
+  width: 10px;
+}
+
+.selectedNav{
+  border-bottom: 3px solid black;
+}

@@ -1,0 +1,19 @@
+.Shop_Now_Btn{
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+}
+
+.Shop_Now_icon{
+    width: 25px;
+    padding-right: 3px;
+}
+
+.likeandSearchicon{
+    margin: 0px 2px;
+    padding: 0px 2px;
+}
+
+.Product__img{
+    padding: 30px 0px;
+}

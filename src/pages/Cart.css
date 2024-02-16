@@ -1,0 +1,12 @@
+.ShoppingCart_Section{
+    padding: 25px;
+}
+.ShoppingCart{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 15px;
+}
+.ShoppingCart_Box{
+    background-color: white;
+    padding: 10px;
+}
