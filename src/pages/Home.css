@@ -7,14 +7,20 @@
   justify-content: end;
 }
 
-@media (min-width: 450) {
+@media (max-width: 450px) {
   .navbarHeaderoption {
-    display: block !important;
+    display: block;
     /* justify-content: end; */
+  }
+  .selectedNav {
+    border: none;
+  }
+  .bottomCardimg {
+    width: inherit;
   }
 }
 
-@media (max-width: 575) {
+@media (max-width: 575px) {
   .productimg {
     max-width: 100%;
     max-height: 45vh;
@@ -24,6 +30,21 @@
     width: initial;
   }
 }
+
+@media (max-width: 575px) {
+    .loginpageForm {
+      display: flex;
+      align-items: center;
+      padding: 10px 40px !important;
+      background: linear-gradient(to right, white, hsl(0, 0%, 95%));
+    }
+    .LoginBox {
+        border: 1px solid lightgray;
+        border-radius: 20px;
+        background: white;
+        margin: 50px 0px;
+    }
+  }
 
 @media (max-width: 700px) {
   /* CSS rules for small devices */

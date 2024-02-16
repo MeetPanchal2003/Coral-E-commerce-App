@@ -4,9 +4,10 @@ import Button from "@mui/material/Button";
 import "./Products.css";
 import { useData } from "../../Data/DataFile";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
-
+import { useNavigate } from "react-router-dom";
 function Products() {
   const { products, Allcategory } = useData();
+  const navigate = useNavigate();
 
   // const [products, setProducts] = useState([]);
   const [Displayproducts, setDisplayproducts] = useState(products);
@@ -76,6 +77,10 @@ function Products() {
               className="PurpuleButton"
               startIcon={<FilterAltOutlinedIcon />}
               variant="contained"
+              onClick={()=>{
+                navigate("/allproducts");
+                window.scroll(0,0)
+              }}
             >
               Filter
             </Button>

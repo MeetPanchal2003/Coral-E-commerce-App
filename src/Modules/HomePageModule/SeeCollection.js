@@ -3,8 +3,10 @@ import "./SeeCollection.css";
 import ZaraBackground from "../../assets/Images/Zara_blur_img.png";
 import Zaralogo from "../../assets/Images/Zara_Logo.png";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 function SeeCollection() {
+  const navigate = useNavigate();
   return (
     <div className="seeCollection">
       <div className="container">
@@ -27,7 +29,10 @@ function SeeCollection() {
             Angeles.
             </div>
             <div className="py-2">
-            <Button className="bg-white text-black collection_btn text-capitalize bolder" variant="contained">See Collection</Button>
+            <Button className="bg-white text-black collection_btn text-capitalize bolder" variant="contained" onClick={()=>{
+              navigate("/allproducts");
+              window.scroll(0,0)
+            }}>See Collection</Button>
             </div>
             
           </div>

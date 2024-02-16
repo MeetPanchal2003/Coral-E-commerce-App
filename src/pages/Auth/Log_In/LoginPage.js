@@ -31,7 +31,7 @@ const LoginPage = () => {
         <div className="">
           <div className="container MainSection">
             <div className="row LoginBox">
-              <div className="col col-lg-6 col-12 borderRight ">
+              <div className="col col-lg-6 col-12 borderRight loginvector ">
                 <img
                   src={LoginVector}
                   alt="login-vector"

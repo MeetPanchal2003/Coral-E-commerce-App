@@ -85,7 +85,7 @@ function Footer() {
               <small className="pointer">© 2022 Coral , Inc.</small>
             </div>
             <div className="col text-center">
-              <img src={Payment} alt="" srcset="" />
+              <img src={Payment} alt="" srcset="" className="bottomCardimg"/>
             </div>
             <div className="col text-end">
               <small className="pointer" onClick={()=>scrollToTop()}>

@@ -19,7 +19,7 @@ function Register() {
         <div className="">
           <div className="container MainSection ">
             <div className="row LoginBox">
-              <div className="col col-lg-6 borderRight">
+              <div className="col col-lg-6 borderRight loginvector">
                 <img src={LoginVector} alt="login-vector" className="borderRadious" width="100%" />
               </div>
               <div className="col loginpageForm col-lg-6 borderRadious">
