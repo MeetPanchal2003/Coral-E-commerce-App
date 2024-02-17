@@ -9,6 +9,14 @@
   border-bottom: 3px solid black;
 }
 
+.css-imxc6v-MuiBadge-badge {
+  font-size: 0.6rem !important;
+  min-width: 15px !important;
+  padding: 0 0px !important;
+  height: 15px !important;
+}
+
+
 @media (min-width: 450) {
   .logo {
     width: 20px !important;

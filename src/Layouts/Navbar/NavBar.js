@@ -8,10 +8,11 @@ import Searchicon from "../../assets/Images/search.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useData } from "../../Data/DataFile";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Badge from '@mui/material/Badge';
 
 function NavBar() {
   const location = useLocation();
-  const { products, Allcategory } = useData();
+  const { products, Allcategory ,Cart} = useData();
   const navigate = useNavigate();
   const [token, setToken] = useState("");
 
@@ -80,6 +81,7 @@ function NavBar() {
             ""
           )}
           <div>
+          <Badge badgeContent={Cart.length} fontSize="small" color="error">
             <small
               className={`mx-2 pb-1 pe-1 pointer ${
                 location.pathname === "/cart" ? "selectedNav" : ""
@@ -100,6 +102,7 @@ function NavBar() {
               />
               Cart
             </small>
+          </Badge>
           </div>
 
           {token ? (
